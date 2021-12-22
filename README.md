@@ -10,7 +10,7 @@
   <img src="media/flutter_05.png" width="200" />
 </p>
 
-<video src='' width=200/>
+<video src='https://user-images.githubusercontent.com/36260221/147098619-51c4388d-7408-4c2b-81fb-4b8daf3cdd4c.mp4' width=200/>
 
 ## Flutter init
 This project is a starting point for a Flutter application.
