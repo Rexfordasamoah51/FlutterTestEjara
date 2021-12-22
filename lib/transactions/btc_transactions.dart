@@ -2,7 +2,6 @@ import 'package:ejaratest/common/components/components.dart';
 import 'package:ejaratest/services/services.dart';
 import 'package:ejaratest/transactions/models/models.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// Ethereum Provider that strems our api

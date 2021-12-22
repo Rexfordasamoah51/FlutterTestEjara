@@ -18,8 +18,7 @@ class AppRaisedButton extends StatelessWidget {
     required this.onPressed,
     this.color,
     this.textColor,
-  })  : assert(label != null),
-        assert(onPressed != null),
+  })  : assert(onPressed != null),
         super(key: key);
 
   /// The button has a default [padding] of [62] horizontally and [12] vetically

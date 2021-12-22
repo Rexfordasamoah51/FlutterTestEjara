@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'models/eth_model.dart';
 
-/// Ethereum Provider that strems our api
+/// Ethereum Provider that sync ethereums data
 final ethereumsProvider = FutureProvider<Ether>(
   (ref) async {
     Ether ether = Ether();

@@ -14,7 +14,7 @@ class ErrorScreen extends StatelessWidget {
         Text(
           'Sorry, there was a problem.\nWe will retry after 10 seconds',
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.subtitle1,
         )
       ],
     );

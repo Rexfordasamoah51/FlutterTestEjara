@@ -13,84 +13,9 @@ class HomePage extends StatelessWidget {
       appBar: CustomAppBar(
         title: const Text('Coins'),
       ),
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+      child: const SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: _NewsListView(),
-      ),
-    );
-  }
-}
-
-class _CardDeign extends StatelessWidget {
-  const _CardDeign({
-    Key? key,
-    required this.title,
-    required this.imagePath,
-  }) : super(key: key);
-
-  final String title;
-  final String imagePath;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.longestSide * 0.4,
-      height: 200,
-      alignment: Alignment.bottomCenter,
-      margin: const EdgeInsets.only(top: 30),
-      child: _CardInfo(
-        title: title,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 10,
-            spreadRadius: 5,
-          ),
-        ],
-        image: DecorationImage(
-          image: AssetImage(imagePath),
-          fit: BoxFit.fill,
-        ),
-      ),
-    );
-  }
-}
-
-class _CardInfo extends StatelessWidget {
-  const _CardInfo({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return FittedBox(
-      child: Container(
-        height: 50,
-        width: MediaQuery.of(context).size.longestSide * 0.4,
-        child: ListTile(
-          title: Text(
-            title,
-            style: Theme.of(context)
-                .textTheme
-                .subtitle1!
-                .copyWith(color: Colors.white),
-          ),
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-            size: 18,
-            color: Colors.white,
-          ),
-        ),
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15)),
-          color: Colors.black.withOpacity(0.5),
-        ),
       ),
     );
   }

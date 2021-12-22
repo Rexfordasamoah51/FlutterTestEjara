@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class CoinInformation {
   final String title;
   final String imagePath;

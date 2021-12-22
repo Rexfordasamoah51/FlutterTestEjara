@@ -12,12 +12,12 @@ class LoadingScreen extends StatelessWidget {
         children: [
           Image.asset(
             'assets/loading.gif',
-            height: 200,
+            height: 160,
           ),
           Text(
-            'Sorry, there was a problem.\nWe will retry after 10 seconds',
+            'Please wait while we load the data',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.subtitle1,
           )
         ],
       ),

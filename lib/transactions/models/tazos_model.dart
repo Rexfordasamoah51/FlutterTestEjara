@@ -11,7 +11,7 @@ class Tazos {
     this.cycle,
     this.level,
     this.hash,
-    this.timestamp,
+  
     this.proto,
     this.priority,
     this.validations,
@@ -26,7 +26,6 @@ class Tazos {
   int? cycle;
   int? level;
   String? hash;
-  DateTime? timestamp;
   int? proto;
   int? priority;
   int? validations;
@@ -41,7 +40,6 @@ class Tazos {
         cycle: json["cycle"],
         level: json["level"],
         hash: json["hash"],
-        timestamp: DateTime.parse(json["timestamp"]),
         proto: json["proto"],
         priority: json["priority"],
         validations: json["validations"],

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:dio/dio.dart';
 import 'package:ejaratest/common/values/values.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
