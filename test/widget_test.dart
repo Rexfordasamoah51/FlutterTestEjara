@@ -1,30 +1,30 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility that Flutter provides. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:ejaratest/app/app.dart';
-import 'package:flutter/material.dart';
+import 'package:ejaratest/services/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  group('Transactions smoke test', () {
+    test(
+      'should return latest bitcoin transactions  detail when all the call end perfect',
+      () async {
+        final hash = await HashAPI.getLatest();
+        final expected = await BTCAPI.getLatest(hashcode: hash.hash!);
+        expect(expected.tx.length, greaterThan(0));
+      },
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    test(
+      'should return latest etherum transactions  detail when all the call end perfect',
+      () async {
+        final expected = await EtherCAPI.getLatest();
+        expect(expected.transactions.length, greaterThan(0));
+      },
+    );
+    test(
+      'should return latest tazos transactions  detail when all the call end perfect',
+      () async {
+        final expected = await TezosAPI.getLatest();
+        expect(expected.hash, isNotNull);
+      },
+    );
   });
 }
